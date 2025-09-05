@@ -21,4 +21,16 @@ class ImageDataManager {
         }
         return getCurrentImage()
     }
+    
+    func getPreviousImage() -> ImageModel {
+            if currentIndex > 0 {
+                currentIndex -= 1
+            }
+            return getCurrentImage()
+        }
+        
+        func getFirstImage() -> ImageModel {
+            currentIndex = 0
+            return getCurrentImage()
+        }
 }
