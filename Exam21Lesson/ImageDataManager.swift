@@ -2,9 +2,17 @@
 
 import Foundation
 
-class ImageDataManager {
+protocol ImageNavigable {
+    func getCurrentImage() -> ImageModel
+    func getNextImage() -> ImageModel
+    func getPreviousImage() -> ImageModel
+    func getFirstImage() -> ImageModel
+}
+
+class ImageDataManager: ImageNavigable {
     private var images: [ImageModel] = []
     private var currentIndex = 0
+    
     
     init(images: [ImageModel]) {
         self.images = images

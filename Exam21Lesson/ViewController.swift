@@ -9,7 +9,8 @@ class ViewController: UIViewController {
     private let imageView = UIImageView()
     
     private let imageManager = ImageManager()
-    private var imageDataManager: ImageDataManager!
+    var imageNavigator: ImageNavigable?
+
     
     private let lastButton = CustomButton(textButton: "Last", bgColor: .systemBlue)
     private let nextButton = CustomButton(textButton: "Next", bgColor: .lightGray)
@@ -19,7 +20,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         let images = imageManager.getImages()
-        self.imageDataManager = ImageDataManager(images: images)
+        self.imageNavigator = ImageDataManager(images: images)
         
         setupViewController()
     }
@@ -29,25 +30,38 @@ class ViewController: UIViewController {
 
 private extension ViewController {
     
+    func setupViewController() {
+        view.backgroundColor = UIColor(white: 0.16, alpha: 1.0)
+        setupStackView()
+        setupImageView()
+        setupLabel()
+        setupButtonStackView()
+        view.addSubview(stackView)
+        view.addSubview(firstButton)
+        
+        setupButtonAction()
+        setupLayout()
+    }
+    
     func setupButtonAction() {
         lastButton.addAction(
             UIAction {
                 [weak self] _ in self?.updateUI(
-                    with: self?.imageDataManager.getPreviousImage())
+                    with: self?.imageNavigator?.getPreviousImage())
             },
             for: .touchUpInside)
         
         nextButton.addAction(
             UIAction {
             [weak self] _ in self?.updateUI(
-                with: self?.imageDataManager.getNextImage())
+                with: self?.imageNavigator?.getNextImage())
             },
             for: .touchUpInside)
         
         firstButton.addAction(
             UIAction {
                 [weak self] _ in self?.updateUI(
-                    with: self?.imageDataManager.getFirstImage())
+                    with: self?.imageNavigator?.getFirstImage())
             },
             for: .touchUpInside)
     }
@@ -58,19 +72,7 @@ private extension ViewController {
             textLabel.text = "\(image.info)"
         }
     }
-        func setupViewController() {
-            view.backgroundColor = UIColor(white: 0.16, alpha: 1.0)
-            setupStackView()
-            setupImageView()
-            setupLabel()
-            setupButtonStackView()
-            view.addSubview(stackView)
-            view.addSubview(firstButton)
-            
-            setupButtonAction()
-            setupLayout()
-        }
-        
+       
         func setupButtonStackView() {
             buttonStackView.axis = .horizontal
             buttonStackView.distribution = .fillEqually
@@ -92,8 +94,8 @@ private extension ViewController {
         }
         
         func setupLabel() {
-            let firstImage = imageDataManager.getCurrentImage()
-            textLabel.text = firstImage.info
+            let firstImage = imageNavigator?.getCurrentImage()
+            textLabel.text = firstImage?.info
             textLabel.font = .systemFont(ofSize: 10, weight: .bold)
             textLabel.textColor = .systemGray6
             textLabel.textAlignment = .left
