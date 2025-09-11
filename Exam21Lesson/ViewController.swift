@@ -2,30 +2,37 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     private var textLabel = UILabel()
     private let stackView = UIStackView()
     private let buttonStackView = UIStackView()
     private let imageView = UIImageView()
     
-    private let imageManager = ImageManager()
-    var imageNavigator: ImageNavigable?
-
+    // private let imageManager = ImageManager()
+    private let imageNavigator: ImageNavigable
+    
     
     private let lastButton = CustomButton(textButton: "Last", bgColor: .systemBlue)
     private let nextButton = CustomButton(textButton: "Next", bgColor: .lightGray)
     private let firstButton = CustomButton(textButton: "First", bgColor: .purple)
-
+    
+    
+    init(imageNavigator: ImageNavigable) {
+        self.imageNavigator = imageNavigator
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let images = imageManager.getImages()
-        self.imageNavigator = ImageDataManager(images: images)
-        
+       
         setupViewController()
+       
     }
 }
-
 //MARK: - Setup view
 
 private extension ViewController {
@@ -47,21 +54,21 @@ private extension ViewController {
         lastButton.addAction(
             UIAction {
                 [weak self] _ in self?.updateUI(
-                    with: self?.imageNavigator?.getPreviousImage())
+                    with: self?.imageNavigator.getPreviousImage())
             },
             for: .touchUpInside)
         
         nextButton.addAction(
             UIAction {
             [weak self] _ in self?.updateUI(
-                with: self?.imageNavigator?.getNextImage())
+                with: self?.imageNavigator.getNextImage())
             },
             for: .touchUpInside)
         
         firstButton.addAction(
             UIAction {
                 [weak self] _ in self?.updateUI(
-                    with: self?.imageNavigator?.getFirstImage())
+                    with: self?.imageNavigator.getFirstImage())
             },
             for: .touchUpInside)
     }
@@ -94,8 +101,8 @@ private extension ViewController {
         }
         
         func setupLabel() {
-            let firstImage = imageNavigator?.getCurrentImage()
-            textLabel.text = firstImage?.info
+            let firstImage = imageNavigator.getCurrentImage()
+            textLabel.text = firstImage.info
             textLabel.font = .systemFont(ofSize: 10, weight: .bold)
             textLabel.textColor = .systemGray6
             textLabel.textAlignment = .left

@@ -42,3 +42,5 @@ class ImageDataManager: ImageNavigable {
             return getCurrentImage()
         }
 }
+
+

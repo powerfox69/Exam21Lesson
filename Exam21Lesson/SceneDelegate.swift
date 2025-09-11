@@ -20,8 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let images = imageManager.getImages()
         let imageDataManager = ImageDataManager(images: images)
         
-        let viewController = ViewController()
-        viewController.imageNavigator = imageDataManager
+        let viewController = ViewController(imageNavigator: imageDataManager)
         
         window.rootViewController = viewController
         window.makeKeyAndVisible()
