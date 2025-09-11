@@ -12,12 +12,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-       
+        
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         
         let imageManager = ImageManager()
-        let images = imageManager.getImages()
+        var images = imageManager.getImages()
+        images.sort(by: <)
+        
+        printImagesInfo(images)
+        
         let imageDataManager = ImageDataManager(images: images)
         
         let viewController = ViewController(imageNavigator: imageDataManager)
@@ -25,6 +29,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.rootViewController = viewController
         window.makeKeyAndVisible()
         self.window = window
+    }
+    
+        private func printImagesInfo(_ images: [ImageModel]) {
+            for image in images {
+                print(image)
+        }
     }
 }
 

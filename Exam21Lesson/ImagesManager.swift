@@ -3,7 +3,7 @@ protocol ImageRetrievable {
     func getImages() -> [ImageModel]
 }
 
-class ImageManager {
+class ImageManager: ImageRetrievable {
     
     func getImages() -> [ImageModel] {
         [
@@ -20,4 +20,23 @@ class ImageManager {
 struct ImageModel {
     let imageName: String
     let info: String
+    
+    init(imageName: String, info: String) {
+        self.imageName = imageName
+        self.info = info
+    }
+}
+
+// MARK: - CustomStringConvertible
+extension ImageModel: CustomStringConvertible {
+    var description: String {
+        "Название картинки: \(imageName), описание: \(info)"
+    }
+}
+
+//MARK: - Comparable
+extension ImageModel: Comparable {
+    static func < (lhs: ImageModel, rhs: ImageModel) -> Bool {
+        lhs.imageName < rhs.imageName
+    }
 }
