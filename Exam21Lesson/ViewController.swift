@@ -8,14 +8,11 @@ class ViewController: UIViewController {
     private let buttonStackView = UIStackView()
     private let imageView = UIImageView()
     
-    // private let imageManager = ImageManager()
     private let imageNavigator: ImageNavigable
-    
     
     private let lastButton = CustomButton(textButton: "Last", bgColor: .systemBlue)
     private let nextButton = CustomButton(textButton: "Next", bgColor: .lightGray)
     private let firstButton = CustomButton(textButton: "First", bgColor: .purple)
-    
     
     init(imageNavigator: ImageNavigable) {
         self.imageNavigator = imageNavigator
@@ -43,34 +40,18 @@ private extension ViewController {
         setupImageView()
         setupLabel()
         setupButtonStackView()
+        setupDelegates()
+        
         view.addSubview(stackView)
         view.addSubview(firstButton)
         
-        setupButtonAction()
         setupLayout()
     }
     
-    func setupButtonAction() {
-        lastButton.addAction(
-            UIAction {
-                [weak self] _ in self?.updateUI(
-                    with: self?.imageNavigator.getPreviousImage())
-            },
-            for: .touchUpInside)
-        
-        nextButton.addAction(
-            UIAction {
-            [weak self] _ in self?.updateUI(
-                with: self?.imageNavigator.getNextImage())
-            },
-            for: .touchUpInside)
-        
-        firstButton.addAction(
-            UIAction {
-                [weak self] _ in self?.updateUI(
-                    with: self?.imageNavigator.getFirstImage())
-            },
-            for: .touchUpInside)
+    func setupDelegates() {
+        lastButton.delegate = self
+        nextButton.delegate = self
+        firstButton.delegate = self
     }
     
     func updateUI(with image: ImageModel?) {
@@ -142,5 +123,21 @@ extension ViewController {
             buttonStackView.heightAnchor.constraint(equalToConstant: 50),
             buttonStackView.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 100)
         ])
+    }
+}
+
+//MARK: - CustomButtonDelegate
+extension ViewController: CustomButtonDelegate {
+    func customButtonDidTap(_ button: CustomButton) {
+        switch button {
+        case lastButton:
+            updateUI(with: imageNavigator.getPreviousImage())
+        case nextButton:
+            updateUI(with: imageNavigator.getNextImage())
+        case firstButton:
+            updateUI(with: imageNavigator.getFirstImage())
+        default:
+            break
+        }
     }
 }
