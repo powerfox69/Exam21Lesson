@@ -21,6 +21,7 @@ struct ImageModel {
     let imageName: String
     let info: String
     
+    //У структур можно не прописывать инициализатор
     init(imageName: String, info: String) {
         self.imageName = imageName
         self.info = info

@@ -6,6 +6,7 @@ protocol CustomButtonDelegate {
 
 class CustomButton: UIButton {
     
+    var elementName: String?
     var delegate: CustomButtonDelegate?
     
     init(textButton: String, bgColor: UIColor) {
@@ -21,6 +22,7 @@ class CustomButton: UIButton {
 // MARK: - Setup View
 
     extension CustomButton {
+        
         private func addAction() {
             let action = UIAction { _ in
                 self.delegate?.customButtonDidTap(self)

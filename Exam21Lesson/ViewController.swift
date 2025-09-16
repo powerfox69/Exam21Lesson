@@ -26,8 +26,24 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        lastButton.elementName = "LastButton"
+        nextButton.elementName = "NextButton"
+        firstButton.elementName = "FirstButton"
+        
         setupViewController()
-       
+        
+        print(view.countUIButtons(
+            lastButton,
+            nextButton,
+            firstButton,
+            textLabel,
+            imageView))
+        view.printAllSubViews(
+            lastButton,
+            nextButton,
+            firstButton,
+            textLabel,
+            imageView)
     }
 }
 //MARK: - Setup view
