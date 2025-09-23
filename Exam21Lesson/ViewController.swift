@@ -82,7 +82,7 @@ private extension ViewController {
             buttonStackView.distribution = .fillEqually
             buttonStackView.alignment = .center
             buttonStackView.spacing = 10
-            buttonStackView.translatesAutoresizingMaskIntoConstraints = false
+            buttonStackView.translatesAutoresizingMaskIntoConstraints()
             
             buttonStackView.addArrangedSubview(lastButton, nextButton)
         }
@@ -92,7 +92,7 @@ private extension ViewController {
             stackView.distribution = .fill
             stackView.alignment = .fill
             stackView.spacing = 20
-            stackView.translatesAutoresizingMaskIntoConstraints = false
+            stackView.translatesAutoresizingMaskIntoConstraints()
             
             stackView.addArrangedSubview(imageView, textLabel, buttonStackView)
         }
@@ -112,7 +112,7 @@ private extension ViewController {
         }
         
         func setupImageView() {
-            imageView.translatesAutoresizingMaskIntoConstraints = false
+            imageView.translatesAutoresizingMaskIntoConstraints()
             imageView.image = UIImage(named: "image1")
             imageView.contentMode = .scaleAspectFill
             imageView.backgroundColor = .clear
