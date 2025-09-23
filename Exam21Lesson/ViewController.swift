@@ -157,3 +157,18 @@ extension ViewController: CustomButtonDelegate {
         }
     }
 }
+
+// MARK: - Touch Handling
+
+extension ViewController {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let currentImage = imageNavigator.getCurrentImage()
+        
+        if textLabel.text == currentImage.info {
+            textLabel.text = currentImage.imageName
+            
+        } else {
+            textLabel.text = currentImage.info
+        }
+    }
+}

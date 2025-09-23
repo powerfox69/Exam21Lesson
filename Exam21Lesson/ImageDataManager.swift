@@ -16,7 +16,7 @@ class ImageDataManager: ImageNavigable {
     
     init(images: [ImageModel]) {
         self.images = images
-       
+        
     }
     
     func getCurrentImage() -> ImageModel {
@@ -31,16 +31,16 @@ class ImageDataManager: ImageNavigable {
     }
     
     func getPreviousImage() -> ImageModel {
-            if currentIndex > 0 {
-                currentIndex -= 1
-            }
-            return getCurrentImage()
+        if currentIndex > 0 {
+            currentIndex -= 1
         }
-        
-        func getFirstImage() -> ImageModel {
-            currentIndex = 0
-            return getCurrentImage()
-        }
+        return getCurrentImage()
+    }
+    
+    func getFirstImage() -> ImageModel {
+        currentIndex = 0
+        return getCurrentImage()
+    }
 }
 
 
