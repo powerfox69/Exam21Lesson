@@ -60,7 +60,13 @@ private extension ViewController {
         
         view.addSubview(stackView)
         view.addSubview(firstButton)
-        
+        translatesAutoresizingMaskIntoConstraints(
+            views:
+        imageView,
+        textLabel,
+        stackView,
+        buttonStackView
+        )
         setupLayout()
     }
     
@@ -82,7 +88,7 @@ private extension ViewController {
             buttonStackView.distribution = .fillEqually
             buttonStackView.alignment = .center
             buttonStackView.spacing = 10
-            buttonStackView.translatesAutoresizingMaskIntoConstraints()
+           // buttonStackView.translatesAutoresizingMaskIntoConstraints
             
             buttonStackView.addArrangedSubview(lastButton, nextButton)
         }
@@ -92,7 +98,7 @@ private extension ViewController {
             stackView.distribution = .fill
             stackView.alignment = .fill
             stackView.spacing = 20
-            stackView.translatesAutoresizingMaskIntoConstraints()
+           // stackView.translatesAutoresizingMaskIntoConstraints()
             
             stackView.addArrangedSubview(imageView, textLabel, buttonStackView)
         }
@@ -112,13 +118,16 @@ private extension ViewController {
         }
         
         func setupImageView() {
-            imageView.translatesAutoresizingMaskIntoConstraints()
+            //imageView.translatesAutoresizingMaskIntoConstraints
             imageView.image = UIImage(named: "image1")
             imageView.contentMode = .scaleAspectFill
             imageView.backgroundColor = .clear
             imageView.layer.cornerRadius = 10
             imageView.layer.masksToBounds = true
+            
+            
         }
+    
     }
 
 //MARK: - Setup Layout

@@ -18,7 +18,8 @@ class ImageDataManager: ImageNavigable {
         self.images = images
         
     }
-    
+    // MARK: - ImageNavigable methods
+
     func getCurrentImage() -> ImageModel {
         images[currentIndex]
     }
@@ -40,6 +41,16 @@ class ImageDataManager: ImageNavigable {
     func getFirstImage() -> ImageModel {
         currentIndex = 0
         return getCurrentImage()
+    }
+    
+    // MARK: - New method for finding image by name
+    func findImage(imageName: String) -> ImageModel? {
+        for image in images {
+            if image.imageName == imageName {
+                return image
+            }
+        }
+        return nil
     }
 }
 

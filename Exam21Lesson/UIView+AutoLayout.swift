@@ -1,8 +1,10 @@
 import UIKit
 
 
-extension UIView {
-    func translatesAutoresizingMaskIntoConstraints() {
-        translatesAutoresizingMaskIntoConstraints = false
+
+    func translatesAutoresizingMaskIntoConstraints(views: UIView...) {
+        for view in views {
+            view.translatesAutoresizingMaskIntoConstraints = false
+        }
     }
-}
+
