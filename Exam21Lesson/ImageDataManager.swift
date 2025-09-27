@@ -7,6 +7,7 @@ protocol ImageNavigable {
     func getNextImage() -> ImageModel
     func getPreviousImage() -> ImageModel
     func getFirstImage() -> ImageModel
+    func findImage(imageName: String) -> ImageModel?
 }
 
 class ImageDataManager: ImageNavigable {

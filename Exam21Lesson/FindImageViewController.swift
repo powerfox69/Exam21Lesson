@@ -109,8 +109,7 @@ private extension FindImageViewController {
         
         guard let text = textField.text, !text.isEmpty else { return }
         
-        if let imageDataManager = imageNavigator as? ImageDataManager,
-           let imageModel = imageDataManager.findImage(imageName: text){
+        if let imageModel = imageNavigator.findImage(imageName: text) {
             resultLabel.text = "Такая картинка есть"
             imageView.image = UIImage(named: imageModel.imageName)
             infoLabel.text = imageModel.info
