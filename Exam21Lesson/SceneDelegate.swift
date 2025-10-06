@@ -22,15 +22,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         printImagesInfo(images)
         
-        let imageDataManager = ImageDataManager(images: images)
+        //let imageDataManager = ImageDataManager(images: images)
         
       //  let viewController = ViewController(imageNavigator: imageDataManager)
         
-        let panImageViewController = PanImageViewController(imageNavigator: imageDataManager)
+       // let panImageViewController = PanImageViewController(imageNavigator: imageDataManager)
    
        // let findImageViewController = FindImageViewController(imageNavigator: imageDataManager)
         
-        window.rootViewController = panImageViewController
+        let licenseManager = LicenseTextManager()
+        
+        let licenseAgreementViewController = LicenseAgreementViewController(licenseManager: licenseManager)
+        
+        window.rootViewController = licenseAgreementViewController
         window.makeKeyAndVisible()
         self.window = window
     }

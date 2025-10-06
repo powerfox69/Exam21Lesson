@@ -128,6 +128,7 @@ private extension FindImageViewController {
 //MARK: - Setup Layout
 
 extension FindImageViewController {
+    //убрать приват
     private func setupLayout() {
         
         translatesAutoresizingMaskIntoConstraints(views: resultLabel, textField, button, imageView, stackView)
