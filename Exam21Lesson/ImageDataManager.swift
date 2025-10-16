@@ -20,7 +20,15 @@ class ImageDataManager: ImageNavigable {
         
     }
     // MARK: - ImageNavigable methods
-
+        
+        func getImageCount() -> Int {
+            return images.count
+        }
+        
+        func getImage(at index: Int) -> ImageModel {
+            return images[index]
+        }
+    
     func getCurrentImage() -> ImageModel {
         images[currentIndex]
     }
@@ -53,6 +61,17 @@ class ImageDataManager: ImageNavigable {
         }
         return nil
     }
+    
+    // MARK: - New methods for swipe actions
+    func deleteImage(at index: Int) {
+        guard index >= 0 && index < images.count else { return }
+        images.remove(at: index)
+    }
+    
+    func toggleMark(at index: Int) {
+            guard index >= 0 && index < images.count else { return }
+            images[index].isMark.toggle()
+        }
 }
 
 

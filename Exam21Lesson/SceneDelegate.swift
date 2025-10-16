@@ -1,9 +1,4 @@
-//
-//  SceneDelegate.swift
-//  Exam21Lesson
-//
-//  Created by Gleb on 9/2/25.
-//
+
 
 import UIKit
 
@@ -15,28 +10,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
+               
+        let imageDataManager = makeImageDataManager()
         
+        let imageListViewController = ImageListViewController(imageDataManager: imageDataManager)
+        
+        window.rootViewController = imageListViewController
+        window.makeKeyAndVisible()
+        self.window = window
+    }
+    
+    // MARK: - Private Methods
+    func makeImageDataManager() -> ImageDataManager {
         let imageManager = ImageManager()
         var images = imageManager.getImages()
         images.sort(by: <)
-        
         printImagesInfo(images)
-        
-        //let imageDataManager = ImageDataManager(images: images)
-        
-      //  let viewController = ViewController(imageNavigator: imageDataManager)
-        
-       // let panImageViewController = PanImageViewController(imageNavigator: imageDataManager)
-   
-       // let findImageViewController = FindImageViewController(imageNavigator: imageDataManager)
-        
-        let licenseManager = LicenseTextManager()
-        
-        let licenseAgreementViewController = LicenseAgreementViewController(licenseManager: licenseManager)
-        
-        window.rootViewController = licenseAgreementViewController
-        window.makeKeyAndVisible()
-        self.window = window
+        return ImageDataManager(images: images)
     }
     
         private func printImagesInfo(_ images: [ImageModel]) {
