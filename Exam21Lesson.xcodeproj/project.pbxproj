@@ -6,30 +6,45 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		F7F5ADF92EABC0CB00872244 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F5ADE62EABC0CB00872244 /* AppDelegate.swift */; };
+		F7F5ADFA2EABC0CB00872244 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F5ADE82EABC0CB00872244 /* CustomButton.swift */; };
+		F7F5ADFB2EABC0CB00872244 /* FindImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F5ADE92EABC0CB00872244 /* FindImageViewController.swift */; };
+		F7F5ADFC2EABC0CB00872244 /* ImageDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F5ADEA2EABC0CB00872244 /* ImageDataManager.swift */; };
+		F7F5ADFD2EABC0CB00872244 /* ImageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F5ADEB2EABC0CB00872244 /* ImageListViewController.swift */; };
+		F7F5ADFE2EABC0CB00872244 /* ImagesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F5ADEC2EABC0CB00872244 /* ImagesManager.swift */; };
+		F7F5ADFF2EABC0CB00872244 /* LicenseAgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F5ADF02EABC0CB00872244 /* LicenseAgreementViewController.swift */; };
+		F7F5AE002EABC0CB00872244 /* LicenseTextManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F5ADF12EABC0CB00872244 /* LicenseTextManager.swift */; };
+		F7F5AE012EABC0CB00872244 /* PanImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F5ADF22EABC0CB00872244 /* PanImageViewController.swift */; };
+		F7F5AE022EABC0CB00872244 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F5ADF32EABC0CB00872244 /* SceneDelegate.swift */; };
+		F7F5AE032EABC0CB00872244 /* UIStackView+ArrangedSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F5ADF42EABC0CB00872244 /* UIStackView+ArrangedSubview.swift */; };
+		F7F5AE042EABC0CB00872244 /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F5ADF52EABC0CB00872244 /* UIView+AutoLayout.swift */; };
+		F7F5AE052EABC0CB00872244 /* UIView+print.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F5ADF62EABC0CB00872244 /* UIView+print.swift */; };
+		F7F5AE062EABC0CB00872244 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F5ADF72EABC0CB00872244 /* ViewController.swift */; };
+		F7F5AE072EABC0CB00872244 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7F5ADE72EABC0CB00872244 /* Assets.xcassets */; };
+		F7F5AE092EABC0CB00872244 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7F5ADEF2EABC0CB00872244 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		F7F5ADE62EABC0CB00872244 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F7F5ADE72EABC0CB00872244 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F7F5ADE82EABC0CB00872244 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		F7F5ADE92EABC0CB00872244 /* FindImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindImageViewController.swift; sourceTree = "<group>"; };
+		F7F5ADEA2EABC0CB00872244 /* ImageDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataManager.swift; sourceTree = "<group>"; };
+		F7F5ADEB2EABC0CB00872244 /* ImageListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListViewController.swift; sourceTree = "<group>"; };
+		F7F5ADEC2EABC0CB00872244 /* ImagesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesManager.swift; sourceTree = "<group>"; };
+		F7F5ADED2EABC0CB00872244 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7F5ADEE2EABC0CB00872244 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F7F5ADF02EABC0CB00872244 /* LicenseAgreementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseAgreementViewController.swift; sourceTree = "<group>"; };
+		F7F5ADF12EABC0CB00872244 /* LicenseTextManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseTextManager.swift; sourceTree = "<group>"; };
+		F7F5ADF22EABC0CB00872244 /* PanImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanImageViewController.swift; sourceTree = "<group>"; };
+		F7F5ADF32EABC0CB00872244 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F7F5ADF42EABC0CB00872244 /* UIStackView+ArrangedSubview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+ArrangedSubview.swift"; sourceTree = "<group>"; };
+		F7F5ADF52EABC0CB00872244 /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
+		F7F5ADF62EABC0CB00872244 /* UIView+print.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+print.swift"; sourceTree = "<group>"; };
+		F7F5ADF72EABC0CB00872244 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F7FBC4B22E676A040053840E /* Exam21Lesson.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Exam21Lesson.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		F7FBC4C42E676A060053840E /* Exceptions for "Exam21Lesson" folder in "Exam21Lesson" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = F7FBC4B12E676A040053840E /* Exam21Lesson */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		F7FBC4B42E676A040053840E /* Exam21Lesson */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				F7FBC4C42E676A060053840E /* Exceptions for "Exam21Lesson" folder in "Exam21Lesson" target */,
-			);
-			path = Exam21Lesson;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		F7FBC4AF2E676A040053840E /* Frameworks */ = {
@@ -42,10 +57,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F7F5ADF82EABC0CB00872244 /* Exam21Lesson */ = {
+			isa = PBXGroup;
+			children = (
+				F7F5ADE62EABC0CB00872244 /* AppDelegate.swift */,
+				F7F5ADE72EABC0CB00872244 /* Assets.xcassets */,
+				F7F5ADE82EABC0CB00872244 /* CustomButton.swift */,
+				F7F5ADED2EABC0CB00872244 /* Info.plist */,
+				F7F5ADEF2EABC0CB00872244 /* LaunchScreen.storyboard */,
+				F7F5ADF32EABC0CB00872244 /* SceneDelegate.swift */,
+				F7F5ADF42EABC0CB00872244 /* UIStackView+ArrangedSubview.swift */,
+				F7F5ADF52EABC0CB00872244 /* UIView+AutoLayout.swift */,
+				F7F5ADF62EABC0CB00872244 /* UIView+print.swift */,
+				F7F5AE0B2EABC1BD00872244 /* Services */,
+				F7F5AE0A2EABC12200872244 /* MainScreen */,
+			);
+			path = Exam21Lesson;
+			sourceTree = "<group>";
+		};
+		F7F5AE0A2EABC12200872244 /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				F7F5ADF72EABC0CB00872244 /* ViewController.swift */,
+				F7F5ADF22EABC0CB00872244 /* PanImageViewController.swift */,
+				F7F5ADF02EABC0CB00872244 /* LicenseAgreementViewController.swift */,
+				F7F5ADEB2EABC0CB00872244 /* ImageListViewController.swift */,
+				F7F5ADE92EABC0CB00872244 /* FindImageViewController.swift */,
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
+		F7F5AE0B2EABC1BD00872244 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F7F5ADF12EABC0CB00872244 /* LicenseTextManager.swift */,
+				F7F5ADEC2EABC0CB00872244 /* ImagesManager.swift */,
+				F7F5ADEA2EABC0CB00872244 /* ImageDataManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		F7FBC4A92E676A040053840E = {
 			isa = PBXGroup;
 			children = (
-				F7FBC4B42E676A040053840E /* Exam21Lesson */,
+				F7F5ADF82EABC0CB00872244 /* Exam21Lesson */,
 				F7FBC4B32E676A040053840E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,9 +127,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				F7FBC4B42E676A040053840E /* Exam21Lesson */,
 			);
 			name = Exam21Lesson;
 			packageProductDependencies = (
@@ -122,6 +174,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7F5AE072EABC0CB00872244 /* Assets.xcassets in Resources */,
+				F7F5AE092EABC0CB00872244 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,10 +186,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7F5ADF92EABC0CB00872244 /* AppDelegate.swift in Sources */,
+				F7F5ADFA2EABC0CB00872244 /* CustomButton.swift in Sources */,
+				F7F5ADFB2EABC0CB00872244 /* FindImageViewController.swift in Sources */,
+				F7F5ADFC2EABC0CB00872244 /* ImageDataManager.swift in Sources */,
+				F7F5ADFD2EABC0CB00872244 /* ImageListViewController.swift in Sources */,
+				F7F5ADFE2EABC0CB00872244 /* ImagesManager.swift in Sources */,
+				F7F5ADFF2EABC0CB00872244 /* LicenseAgreementViewController.swift in Sources */,
+				F7F5AE002EABC0CB00872244 /* LicenseTextManager.swift in Sources */,
+				F7F5AE012EABC0CB00872244 /* PanImageViewController.swift in Sources */,
+				F7F5AE022EABC0CB00872244 /* SceneDelegate.swift in Sources */,
+				F7F5AE032EABC0CB00872244 /* UIStackView+ArrangedSubview.swift in Sources */,
+				F7F5AE042EABC0CB00872244 /* UIView+AutoLayout.swift in Sources */,
+				F7F5AE052EABC0CB00872244 /* UIView+print.swift in Sources */,
+				F7F5AE062EABC0CB00872244 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F7F5ADEF2EABC0CB00872244 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F7F5ADEE2EABC0CB00872244 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		F7FBC4C62E676A060053840E /* Debug */ = {
