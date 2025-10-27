@@ -8,16 +8,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
-        guard let windowScene = (scene as? UIWindowScene) else { return }
-        let window = UIWindow(windowScene: windowScene)
+        guard let windowScene = scene as? UIWindowScene else { return }
+
+        window = UIWindow(windowScene: windowScene)
                
-        let imageDataManager = makeImageDataManager()
         
-        let imageListViewController = ImageListViewController(imageDataManager: imageDataManager)
+        let marTableViewController = MarTableViewController()
+        marTableViewController.imageDataManager = makeImageDataManager()
         
-        window.rootViewController = imageListViewController
-        window.makeKeyAndVisible()
-        self.window = window
+        window?.rootViewController = marTableViewController
+        window?.makeKeyAndVisible()
     }
     
     // MARK: - Private Methods

@@ -23,6 +23,8 @@
 		F7F5AE062EABC0CB00872244 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F5ADF72EABC0CB00872244 /* ViewController.swift */; };
 		F7F5AE072EABC0CB00872244 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7F5ADE72EABC0CB00872244 /* Assets.xcassets */; };
 		F7F5AE092EABC0CB00872244 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7F5ADEF2EABC0CB00872244 /* LaunchScreen.storyboard */; };
+		F7F5AE422EABC37100872244 /* MarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F5AE412EABC37100872244 /* MarTableViewController.swift */; };
+		F7F5AE452EABDE3300872244 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F5AE442EABDE3300872244 /* ImageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		F7F5ADF52EABC0CB00872244 /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
 		F7F5ADF62EABC0CB00872244 /* UIView+print.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+print.swift"; sourceTree = "<group>"; };
 		F7F5ADF72EABC0CB00872244 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F7F5AE412EABC37100872244 /* MarTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarTableViewController.swift; sourceTree = "<group>"; };
+		F7F5AE442EABDE3300872244 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		F7FBC4B22E676A040053840E /* Exam21Lesson.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Exam21Lesson.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -60,6 +64,7 @@
 		F7F5ADF82EABC0CB00872244 /* Exam21Lesson */ = {
 			isa = PBXGroup;
 			children = (
+				F7F5AE432EABDE0400872244 /* CustomCell */,
 				F7F5ADE62EABC0CB00872244 /* AppDelegate.swift */,
 				F7F5ADE72EABC0CB00872244 /* Assets.xcassets */,
 				F7F5ADE82EABC0CB00872244 /* CustomButton.swift */,
@@ -83,6 +88,7 @@
 				F7F5ADF02EABC0CB00872244 /* LicenseAgreementViewController.swift */,
 				F7F5ADEB2EABC0CB00872244 /* ImageListViewController.swift */,
 				F7F5ADE92EABC0CB00872244 /* FindImageViewController.swift */,
+				F7F5AE412EABC37100872244 /* MarTableViewController.swift */,
 			);
 			path = MainScreen;
 			sourceTree = "<group>";
@@ -95,6 +101,14 @@
 				F7F5ADEA2EABC0CB00872244 /* ImageDataManager.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		F7F5AE432EABDE0400872244 /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				F7F5AE442EABDE3300872244 /* ImageCell.swift */,
+			);
+			path = CustomCell;
 			sourceTree = "<group>";
 		};
 		F7FBC4A92E676A040053840E = {
@@ -192,12 +206,14 @@
 				F7F5ADFC2EABC0CB00872244 /* ImageDataManager.swift in Sources */,
 				F7F5ADFD2EABC0CB00872244 /* ImageListViewController.swift in Sources */,
 				F7F5ADFE2EABC0CB00872244 /* ImagesManager.swift in Sources */,
+				F7F5AE422EABC37100872244 /* MarTableViewController.swift in Sources */,
 				F7F5ADFF2EABC0CB00872244 /* LicenseAgreementViewController.swift in Sources */,
 				F7F5AE002EABC0CB00872244 /* LicenseTextManager.swift in Sources */,
 				F7F5AE012EABC0CB00872244 /* PanImageViewController.swift in Sources */,
 				F7F5AE022EABC0CB00872244 /* SceneDelegate.swift in Sources */,
 				F7F5AE032EABC0CB00872244 /* UIStackView+ArrangedSubview.swift in Sources */,
 				F7F5AE042EABC0CB00872244 /* UIView+AutoLayout.swift in Sources */,
+				F7F5AE452EABDE3300872244 /* ImageCell.swift in Sources */,
 				F7F5AE052EABC0CB00872244 /* UIView+print.swift in Sources */,
 				F7F5AE062EABC0CB00872244 /* ViewController.swift in Sources */,
 			);

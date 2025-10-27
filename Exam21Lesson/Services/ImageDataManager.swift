@@ -7,6 +7,7 @@ protocol ImageNavigable {
     func getNextImage() -> ImageModel
     func getPreviousImage() -> ImageModel
     func getFirstImage() -> ImageModel
+    func getIsFavoriteProducts() -> [ImageModel]
     func findImage(imageName: String) -> ImageModel?
 }
 
@@ -20,8 +21,17 @@ class ImageDataManager: ImageNavigable {
         
     }
     // MARK: - ImageNavigable methods
+    func getIsFavoriteProducts() -> [ImageModel] {
+        var isMarkImages = [ImageModel]()
+        for image in images {
+            if image.isMark {
+                isMarkImages.append(image)
+            }
+        }
+        return isMarkImages
+    }
         
-        func getImageCount() -> Int {
+    func getImageCount() -> Int {
             return images.count
         }
         
