@@ -26,6 +26,16 @@ class MarTableViewController: UITableViewController {
         
         cell.configure(image: image)
         
+        cell.actionButtonClosure = { cell in
+            if let indexPath = self.tableView.indexPath(for: cell) {
+                let favoritrImage = self.imageDataManager.getIsFavoriteProducts()
+                let product = favoritrImage[indexPath.row]
+                
+                self.imageDataManager.toggelFavorite(product)
+                self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            }
+        }
+        
         return cell
     }
     
@@ -33,3 +43,8 @@ class MarTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
+
+
+
+
+

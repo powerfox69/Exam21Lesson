@@ -21,6 +21,12 @@ class ImageDataManager: ImageNavigable {
         
     }
     // MARK: - ImageNavigable methods
+    func toggelFavorite(_ product: ImageModel) {
+        if let index = images.firstIndex(of: product) {
+            images[index].isMark.toggle()
+        }
+    }
+    
     func getIsFavoriteProducts() -> [ImageModel] {
         var isMarkImages = [ImageModel]()
         for image in images {
@@ -61,6 +67,8 @@ class ImageDataManager: ImageNavigable {
         currentIndex = 0
         return getCurrentImage()
     }
+    
+    
     
     // MARK: - New method for finding image by name
     func findImage(imageName: String) -> ImageModel? {
