@@ -7,6 +7,12 @@ protocol IButtonDelegate {
 
 class ImageCell: UITableViewCell {
     
+    enum Constant {
+        static let photo = "Photo"
+        static let checkmarkSquareFill = "checkmark.square.fill"
+        static let checkmarkSquare = "checkmark.square"
+    }
+    
     private let titleLabel = UILabel()
     private let descriptionLabel = UILabel()
     private let imageProduct = UIImageView()
@@ -31,24 +37,30 @@ class ImageCell: UITableViewCell {
         
         toggleMark = image.isMark
         
-        let mark = image.isMark ? "checkmark.square.fill" : "checkmark.square"
+        let mark = image.isMark ? Constant.checkmarkSquareFill : Constant.checkmarkSquare
         markButton.setImage(UIImage(systemName: mark), for: .normal)
         
         
         if let image = UIImage(named: image.imageName) {
             imageProduct.image = image
         } else {
-            imageProduct.image = UIImage(systemName: "photo")
+            imageProduct.image = UIImage(systemName: Constant.photo)
         }
     }
     
     @objc
     private func toggleMarkButton() {
         toggleMark.toggle()
-        let mark = toggleMark ? "checkmark.square.fill" : "checkmark.square"
-        markButton.setImage(UIImage(systemName: mark), for: .normal)
+        updateMarkButtonImage()
+        //let mark = toggleMark ? Constant.checkmarkSquareFill : Constant.checkmarkSquare
+       // markButton.setImage(UIImage(systemName: mark), for: .normal)
         //delegate?.actionButton(cell: self)
         actionButtonClosure?(self)
+    }
+    
+    private func updateMarkButtonImage() {
+        let mark = toggleMark ? Constant.checkmarkSquareFill : Constant.checkmarkSquare
+        markButton.setImage(UIImage(systemName: mark), for: .normal)
     }
 }
 

@@ -7,7 +7,7 @@ protocol LicenseTextRetrievable {
 class LicenseTextManager: LicenseTextRetrievable {
     
     func getLicenseTitle() -> String {
-        return "LICENSED APPLICATION END USER LICENSE AGREEMENT"
+        "LICENSED APPLICATION END USER LICENSE AGREEMENT"
     }
     
     func getLicenseText() -> String {
