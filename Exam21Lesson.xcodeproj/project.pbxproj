@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F7AFFE132EBCF6A80044D313 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AFFE122EBCF6A80044D313 /* CustomView.swift */; };
 		F7F5ADF92EABC0CB00872244 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F5ADE62EABC0CB00872244 /* AppDelegate.swift */; };
 		F7F5ADFA2EABC0CB00872244 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F5ADE82EABC0CB00872244 /* CustomButton.swift */; };
 		F7F5ADFB2EABC0CB00872244 /* FindImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F5ADE92EABC0CB00872244 /* FindImageViewController.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F7AFFE122EBCF6A80044D313 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		F7F5ADE62EABC0CB00872244 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7F5ADE72EABC0CB00872244 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F7F5ADE82EABC0CB00872244 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
@@ -61,9 +63,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F7AFFE112EBCF67E0044D313 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				F7AFFE122EBCF6A80044D313 /* CustomView.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
 		F7F5ADF82EABC0CB00872244 /* Exam21Lesson */ = {
 			isa = PBXGroup;
 			children = (
+				F7AFFE112EBCF67E0044D313 /* CustomView */,
 				F7F5AE432EABDE0400872244 /* CustomCell */,
 				F7F5ADE62EABC0CB00872244 /* AppDelegate.swift */,
 				F7F5ADE72EABC0CB00872244 /* Assets.xcassets */,
@@ -209,6 +220,7 @@
 				F7F5AE422EABC37100872244 /* MarTableViewController.swift in Sources */,
 				F7F5ADFF2EABC0CB00872244 /* LicenseAgreementViewController.swift in Sources */,
 				F7F5AE002EABC0CB00872244 /* LicenseTextManager.swift in Sources */,
+				F7AFFE132EBCF6A80044D313 /* CustomView.swift in Sources */,
 				F7F5AE012EABC0CB00872244 /* PanImageViewController.swift in Sources */,
 				F7F5AE022EABC0CB00872244 /* SceneDelegate.swift in Sources */,
 				F7F5AE032EABC0CB00872244 /* UIStackView+ArrangedSubview.swift in Sources */,

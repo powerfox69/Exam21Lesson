@@ -1,24 +1,10 @@
 
 import UIKit
 
-protocol IButtonDelegate {
-    func actionButton(cell: UITableViewCell)
-}
 
 class ImageCell: UITableViewCell {
     
-    enum Constant {
-        static let photo = "Photo"
-        static let checkmarkSquareFill = "checkmark.square.fill"
-        static let checkmarkSquare = "checkmark.square"
-    }
-    
-    private let titleLabel = UILabel()
-    private let descriptionLabel = UILabel()
-    private let imageProduct = UIImageView()
-    private let markButton = UIButton()
-    
-    private var toggleMark = false
+    private let customView = CustomView()
     
     var actionButtonClosure: ((UITableViewCell) -> Void)?
     
@@ -27,114 +13,42 @@ class ImageCell: UITableViewCell {
         setup()
     }
     
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     func configure(image: ImageModel) {
-        titleLabel.text = image.imageName
-        descriptionLabel.text = image.info
+        customView.configure(image: image)
         
-        toggleMark = image.isMark
-        
-        let mark = image.isMark ? Constant.checkmarkSquareFill : Constant.checkmarkSquare
-        markButton.setImage(UIImage(systemName: mark), for: .normal)
-        
-        
-        if let image = UIImage(named: image.imageName) {
-            imageProduct.image = image
-        } else {
-            imageProduct.image = UIImage(systemName: Constant.photo)
+        customView.actionButtonClosure = toggleMarkButton
         }
-    }
     
-    @objc
+    
     private func toggleMarkButton() {
-        toggleMark.toggle()
-        updateMarkButtonImage()
-        //let mark = toggleMark ? Constant.checkmarkSquareFill : Constant.checkmarkSquare
-       // markButton.setImage(UIImage(systemName: mark), for: .normal)
-        //delegate?.actionButton(cell: self)
-        actionButtonClosure?(self)
-    }
-    
-    private func updateMarkButtonImage() {
-        let mark = toggleMark ? Constant.checkmarkSquareFill : Constant.checkmarkSquare
-        markButton.setImage(UIImage(systemName: mark), for: .normal)
+    actionButtonClosure?(self)
     }
 }
 
 // MARK: - Setting
 private extension ImageCell {
     func setup() {
-        addSubViews()
-        setupTitleLabel()
-        setupDescription()
-        setupImageProduct()
-        setupMarkButton()
+        contentView.addSubview(customView)
         setupLayout()
-    }
-    
-    func addSubViews() {
-        [titleLabel,
-         descriptionLabel,
-         imageProduct,
-         markButton].forEach { view in
-            contentView.addSubview(view)
-        }
-    }
-}
-
-// MARK: - Settings Views
-private extension ImageCell {
-    
-    func setupTitleLabel() {
-        titleLabel.font = .boldSystemFont(ofSize: 20)
-    }
-    
-    func setupDescription() {
-        descriptionLabel.numberOfLines = 0
-    }
-    
-    func setupImageProduct() {
-        imageProduct.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        imageProduct.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        imageProduct.contentMode = .scaleAspectFill
-    }
-    
-    func setupMarkButton() {
-        markButton.tintColor = .systemBlue
-        markButton.addTarget(self, action: #selector(toggleMarkButton), for: .touchUpInside)
     }
 }
 
 // MARK: - Layout
 private extension ImageCell {
     func setupLayout() {
-        [titleLabel,
-         descriptionLabel,
-         imageProduct,
-         markButton].forEach { view in
-            view.translatesAutoresizingMaskIntoConstraints = false
-        }
+            customView.translatesAutoresizingMaskIntoConstraints = false
+        
         
         NSLayoutConstraint.activate([
-            imageProduct.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            imageProduct.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 30),
-            
-            titleLabel.leadingAnchor.constraint(equalTo: imageProduct.trailingAnchor, constant: 16),
-            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
-            titleLabel.trailingAnchor.constraint(lessThanOrEqualTo: markButton.leadingAnchor, constant: -8),
-            
-            descriptionLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-            descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 4),
-            descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            descriptionLabel.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -16),
-            
-            markButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            markButton.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor),
-            markButton.widthAnchor.constraint(equalToConstant: 24),
-            markButton.heightAnchor.constraint(equalToConstant: 24)
+            customView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            customView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
+            customView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15),
+            customView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15)
         ])
     }
 }

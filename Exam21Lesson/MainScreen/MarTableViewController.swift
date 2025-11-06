@@ -9,6 +9,7 @@ class MarTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.separatorStyle = .none
         tableView.register(ImageCell.self, forCellReuseIdentifier: cellIdentifier)
     }
     
@@ -26,15 +27,14 @@ class MarTableViewController: UITableViewController {
         
         cell.configure(image: image)
         
-        cell.actionButtonClosure = { cell in
-            if let indexPath = self.tableView.indexPath(for: cell) {
-                let favoritrImage = self.imageDataManager.getIsFavoriteProducts()
-                let product = favoritrImage[indexPath.row]
-                
+        cell.actionButtonClosure = { myCell in
+            if let index = self.tableView.indexPath(for: myCell) {
+                let product = self.imageDataManager.getIsFavoriteProducts()[index.row]
                 self.imageDataManager.toggelFavorite(product)
-                self.tableView.deleteRows(at: [indexPath], with: .automatic)
+                self.tableView.deleteRows(at: [index], with: .automatic)
             }
         }
+        cell.selectionStyle = .none
         
         return cell
     }
@@ -42,9 +42,15 @@ class MarTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+            return 140
+        }
+    
 }
-
-
-
-
+    
+    
+    
+    
+    
 
